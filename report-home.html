@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victim or Witness Selection</title>
+    <link rel="stylesheet" href="/css/report-home.css" />
+  </head>
+  <body>
+    <section class="selection-page">
+      <div class="card-container">
+        <!-- Victim Card -->
+        <div class="card" id="victim-card">
+          <h2>I am a Victim</h2>
+          <p>
+            If you experienced the incident, please provide us with your details
+            confidentially to help us take action.
+          </p>
+          <button
+            class="select-btn"
+            onclick="window.location.href='victim-form.html'"
+          >
+            Report as Victim
+          </button>
+        </div>
+
+        <!-- Witness Card -->
+        <div class="card" id="witness-card">
+          <h2>I am a Witness</h2>
+          <p>
+            If you witnessed the incident, your report can help us take the
+            necessary actions.
+          </p>
+
+          <button
+            class="select-btn"
+            onclick="window.location.href='witness-form.html'"
+          >
+            Report as Witness
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Load JavaScript after the content -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

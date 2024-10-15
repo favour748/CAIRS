@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>CAIRS</title>
   </head>
   <body>
@@ -23,23 +23,21 @@
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">Home</a></li>
+          <li><a class="main-nav-link active" href="#">Home</a></li>
           <li>
-            <a class="main-nav-link" href="report/report-page.html"
+            <a class="main-nav-link" href="/report-home.html"
               >Report Incident</a
             >
           </li>
           <li>
-            <a class="main-nav-link" href="/track-report/tracking-page.html"
+            <a class="main-nav-link" href="/track-report.html"
               >Track Report</a
             >
           </li>
-          <li><a class="main-nav-link" href="#">About</a></li>
           <li><a class="main-nav-link" href="#">FAQ</a></li>
+          <li><a class="main-nav-link" href="#">Login</a></li>
           <li>
-            <a class="main-nav-link nav-cta" href="/onboarding/sign-up.html"
-              >Sign Up</a
-            >
+            <a class="main-nav-link nav-cta" href="sign-up.html">Sign Up</a>
           </li>
         </ul>
       </nav>
@@ -100,37 +98,311 @@
           </div>
         </div>
       </section>
-
+      <!-- Emergency Contacts Section -->
       <section class="quick-respond">
-        <div class="righ-qr">
-          <img
-            src="/image/Frame 1000003468.png"
-            class="reside-img"
-            alt="a call icon"
-          />
-          <p>
-            If you or someone you know is in immediate danger,
-            <span class="red-text">
-              please call 911 or your local police immediately.</span
+        <div class="left-quick-respond">
+          <div class="quick-respond-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4em"
+              height="4em"
+              viewBox="0 0 24 24"
             >
-          </p>
-        </div>
-        <div class="left-qr">
-          <div class="quick-img">
-            <img
-              src="/image/Frame 1000003469.png"
-              class="reside-img"
-              alt="a heart icon"
-            />
+              <path
+                fill="rgb(186, 64, 25)"
+                d="m14.556 15.548l-.455.48s-1.083 1.139-4.038-1.972s-1.872-4.25-1.872-4.25l.287-.303c.706-.744.773-1.938.156-2.81L7.374 4.91C6.61 3.83 5.135 3.688 4.26 4.609L2.691 6.26c-.433.457-.723 1.048-.688 1.705c.09 1.68.808 5.293 4.812 9.51c4.247 4.47 8.232 4.648 9.861 4.487c.516-.05.964-.329 1.325-.709l1.42-1.496c.96-1.01.69-2.74-.538-3.446l-1.91-1.1c-.806-.463-1.787-.327-2.417.336"
+              />
+              <path
+                fill="rgb(186, 64, 25)"
+                fill-rule="evenodd"
+                d="M22 7a5 5 0 0 1-7.226 4.478a.82.82 0 0 0-.574-.067l-1.113.298a.65.65 0 0 1-.796-.796l.298-1.113a.82.82 0 0 0-.067-.574A5 5 0 1 1 22 7m-5-2.187c.518 0 .938.42.938.937v.313h.312a.937.937 0 1 1 0 1.875h-.312v.312a.937.937 0 1 1-1.875 0v-.312h-.313a.937.937 0 1 1 0-1.875h.313V5.75c0-.518.42-.937.937-.937"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <h1>Immediate Danger</h1>
           </div>
           <p>
             If you or someone you know is in immediate danger,
-            <span class="green-text">
-              please call 911 or your local police immediately.</span
+            <span class="red-text">
+              please call 911 or your local police immediately.
+            </span>
+          </p>
+        </div>
+        <div class="right-quick-respond">
+          <div class="quick-respond-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4em"
+              height="4em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="rgb(186, 64, 25)"
+                d="M16.125 3q2.5 0 4.188 1.85T22 9.25q0 .45-.05.888t-.175.862h-6.25L13.85 8.45h-1.8l-1.35 4.3L9.525 11h-7.3q-.125-.425-.175-.862T2 9.275Q2 6.7 3.675 4.85T7.85 3q1.2 0 2.263.475T12 4.8q.8-.85 1.863-1.325T16.125 3m-4.15 18.95L3.7 13.625q-.15-.15-.275-.3T3.175 13H8.45l1.725 2.575h1.775l1.35-4.325L14.45 13h6.35l-.25.3l-.25.3z"
+              />
+            </svg>
+            <h1>Thinking of Suicide</h1>
+          </div>
+          <p>
+            if you are thinking of hurting yourself,
+            <a class="green-text">
+              please reach out to the Suicide prevention Lifeline here.
+              &rarr;</a
             >
           </p>
         </div>
       </section>
+
+      <!-- ======================Report Sections============================================== -->
+      <section class="report-container">
+        <div class="content">
+          <h2>Report an Incident</h2>
+          <p>
+            If you suspect or witness any form of child abuse, report it
+            immediately. Your report can save a life. The process is simple,
+            safe, and can be done anonymously if you wish.
+          </p>
+          <p>
+            Select the type of incident, provide key details, and submit your
+            report. Your submission will be handled confidentially, and
+            appropriate actions will be taken by the authorities.
+          </p>
+          <a href="report.html" class="report-button">Report Now</a>
+        </div>
+      </section>
+
+      <!-- How is work  -->
+      <section class="section-how">
+        <div class="container">
+          <span class="sub-heading">How it works</span>
+          <h2 class="heading-secondary">
+            Make your report in just 3 simple steps
+          </h2>
+        </div>
+        <!-- Step 01 -->
+        <div class="container grid grid--2-cols grid--center-v">
+          <div class="step-text-box">
+            <p class="step-number">01</p>
+            <h3 class="heading-tertiary">Select Type of Abuse :</h3>
+            <p class="step-discription">
+              Choose the category that best describes the incident you are
+              reporting. You can select from options like physical abuse,
+              emotional abuse, sexual abuse, neglect, or bullying. If unsure,
+              pick the category that seems closest to the incident.
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              src="/image/app/app-screen-1.png"
+              class="step-img"
+              alt="iphone app preferences selection screen"
+            />
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-img-box">
+            <img
+              src="/image/app/app-screen-2.png"
+              class="step-img"
+              alt="iphone app preferences selection screen"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">02</p>
+            <h3 class="heading-tertiary">Step 2: Provide Incident Details</h3>
+            <p class="step-discription">
+              Provide key details about the incident, such as when and where it
+              happened. You can also upload photos or videos.
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="step-text-box">
+            <p class="step-number">03</p>
+            <h3 class="heading-tertiary">
+              Submit Report Anonymously or With Your Contact:
+            </h3>
+            <p class="step-discription">
+              You can submit the report anonymously if you prefer, or provide
+              your contact information to receive updates or assist in the
+              investigation. Your information will be kept confidential.
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              src="/image/app/app-screen-3.png"
+              class="step-img"
+              alt="iphone app preferences selection screen"
+            />
+          </div>
+
+          <!-- Step 04 -->
+          <div class="step-img-box">
+            <img
+              src="/image/app/app-screen-2.png"
+              class="step-img"
+              alt="iphone app preferences selection screen"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">04</p>
+            <h3 class="heading-tertiary">
+              Step 4: Authorities Will Review and Respond
+            </h3>
+            <p class="step-discription">
+              fter submitting your report, the relevant authorities will review
+              it and take appropriate action. If needed, they may contact you
+              for more information or updates regarding the case.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- testimonials section -->
+      <section class="testimonials-section">
+        <h2>User Testimonials & Impact Stories</h2>
+        <p>
+          Read inspiring stories from individuals who reported incidents or
+          found help using our system.
+        </p>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-card active">
+            <p class="testimonial-text">
+              "Thanks to this platform, I was able to report a bullying incident
+              at school, and action was taken immediately."
+            </p>
+            <p class="user-name">– Sarah A., Lagos</p>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Reporting anonymously made it easier for me to share the details
+              of abuse without fear. The authorities followed up within days."
+            </p>
+            <p class="user-name">– Anonymous, Abuja</p>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "This platform saved a child's life. The authorities acted fast,
+              and now the child is in a safer place."
+            </p>
+            <p class="user-name">– John D., Port Harcourt</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="prev-btn">&#9664; Prev</button>
+          <button class="next-btn">Next &#9654;</button>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <!-- <section class="background-div">
+        <div class="faq-section">
+          <h2>Frequently Asked Questions (FAQs)</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question">
+                What types of abuse can I report?
+                <span class="arrow">&#9660;</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You can report various forms of abuse, including physical,
+                  emotional, sexual abuse, neglect, and bullying.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Can I report incidents anonymously?
+                <span class="arrow">&#9660;</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, you have the option to report anonymously, and your
+                  identity will remain confidential if you choose to do so.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                What happens after I submit a report?
+                <span class="arrow">&#9660;</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Authorities will review your report and take appropriate
+                  action. If you provided contact details, you may receive
+                  follow-up updates.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Is there any follow-up after submitting a report?
+                <span class="arrow">&#9660;</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  If you provided contact details, authorities may reach out to
+                  you for more information or to provide updates on the case.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
     </main>
+    <footer class="footer">
+      <div class="content-container">
+        <div class="footer-about">
+          <h3>About CAIRS</h3>
+          <p>
+            Our mission is to provide a safe, secure, and anonymous platform for
+            individuals to report cases of child abuse without fear of stigma or
+            retaliation. We are committed to empowering victims, concerned
+            individuals, and communities by offering a seamless way to raise
+            alerts about incidents. Every report is directed to the appropriate
+            authorities to ensure prompt action is taken, safeguarding children
+            from harm.
+          </p>
+        </div>
+        <div class="footer-container">
+          <div class="">
+            <h3>Resources</h3>
+            <p>For more resources, <br />visit missingkids.org</p>
+            <img src="/image/Frame 1000003467.png" alt="" width="35%" />
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#report">Report Incident</a></li>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@cairs.org</p>
+            <p>Phone: +234 123 456 7890</p>
+            <p>Address: 123 Child Protection Avenue, Lagos, Nigeria</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 CAIRS. All Rights Reserved.</p>
+          <button class="scroll-top-btn">Back to Top &uarr;</button>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/home-page.js"></script>
   </body>
 </html>

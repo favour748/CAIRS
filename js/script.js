@@ -132,3 +132,20 @@ function validateStep(stepIndex) {
 
   return isValid;
 }
+
+// Function to switch between sections
+function showNextSection(sectionNumber) {
+  const sections = document.querySelectorAll(".form-section");
+  sections.forEach((section) => section.classList.remove("active"));
+
+  const nextSection = document.getElementById(`section-${sectionNumber}`);
+  nextSection.classList.add("active");
+}
+
+// Handle form submission
+const form = document.getElementById("victimForm");
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  alert("Thank you! Your report has been submitted.");
+  // Redirect or reset form as needed
+});

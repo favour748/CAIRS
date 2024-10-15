@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Report</title>
+    <link rel="stylesheet" href="/css/track-report.css" />
+  </head>
+  <body>
+    <div class="track-report-container">
+      <h1>Track Your Report</h1>
+
+      <!-- Input Section -->
+      <div class="tracking-input">
+        <label for="report-id">Enter Report ID:</label>
+        <input
+          type="text"
+          id="report-id"
+          placeholder="e.g., CAIRS12345"
+          required
+        />
+
+        <label for="access-code">Access Code / Email (Optional):</label>
+        <input
+          type="text"
+          id="access-code"
+          placeholder="Enter access code or email"
+        />
+
+        <button onclick="trackReport()">Search</button>
+      </div>
+
+      <!-- Report Summary (Displayed After Search) -->
+      <div class="report-summary hidden" id="report-summary">
+        <h2>Report Summary</h2>
+        <p><strong>Report ID:</strong> <span id="summary-report-id"></span></p>
+        <p><strong>Status:</strong> <span id="status"></span></p>
+        <p>
+          <strong>Date Submitted:</strong> <span id="date-submitted"></span>
+        </p>
+        <p><strong>Assigned Authority:</strong> <span id="authority"></span></p>
+      </div>
+
+      <!-- Timeline or Progress Tracker -->
+      <div class="progress-tracker hidden" id="progress-tracker">
+        <h3>Progress</h3>
+        <ul>
+          <li id="stage-1">Report Submitted</li>
+          <li id="stage-2">Under Review</li>
+          <li id="stage-3">Investigation in Progress</li>
+          <li id="stage-4">Report Resolved</li>
+        </ul>
+      </div>
+
+      <!-- Communication Section -->
+      <div class="communication-section hidden" id="communication-section">
+        <h3>Add More Information</h3>
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Enter your message here..."
+        ></textarea>
+        <input type="file" id="upload" />
+        <button onclick="sendMessage()">Submit</button>
+      </div>
+
+      <!-- Security Notice -->
+      <div class="security-notice">
+        <p>All information shared will remain confidential and secure.</p>
+      </div>
+
+      <script>
+        // Function to simulate tracking a report
+        function trackReport() {
+          const reportID = document.getElementById("report-id").value;
+          if (reportID) {
+            // Display the summary and progress tracker for demo purposes
+            document.getElementById("summary-report-id").textContent = reportID;
+            document.getElementById("status").textContent =
+              "Under Investigation";
+            document.getElementById("date-submitted").textContent =
+              "2024-10-12";
+            document.getElementById("authority").textContent =
+              "Child Protection Agency";
+
+            document
+              .getElementById("report-summary")
+              .classList.remove("hidden");
+            document
+              .getElementById("progress-tracker")
+              .classList.remove("hidden");
+            document
+              .getElementById("communication-section")
+              .classList.remove("hidden");
+          } else {
+            alert("Please enter a valid Report ID.");
+          }
+        }
+
+        // Function to handle message submission
+        function sendMessage() {
+          const message = document.getElementById("message").value;
+          if (message) {
+            alert("Your message has been submitted.");
+            document.getElementById("message").value = ""; // Clear the input
+          } else {
+            alert("Please enter a message.");
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

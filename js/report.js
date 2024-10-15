@@ -25,5 +25,5 @@ document
     event.preventDefault();
     alert("Your report has been submitted successfully.");
     // You can redirect the user to a confirmation page or dashboard
-    window.location.href = "thank-you.html";
+    window.location.href = "Report-Confirmation.html";
   });
