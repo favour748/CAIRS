@@ -59,5 +59,35 @@
         <p>Agency Dashboard © 2024</p>
       </footer>
     </div>
+    <script type="module">
+      import { auth, db } from "../js/firebaseConfig.js";
+      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+      import {
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            const role = userData.userType;
+
+            if (role !== "agency") {
+              alert("Access Denied");
+              window.location.href = "/login.html";
+            }
+          } else {
+            alert("User data not found");
+            window.location.href = "/login.html";
+          }
+        } else {
+          // No user is signed in
+          alert("You must be logged in to access this");
+          window.location.href = "/login.html";
+        }
+      });
+    </script>
   </body>
 </html>
