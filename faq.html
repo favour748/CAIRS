@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Page</title>
+    <link rel="stylesheet" href="css/faq.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Frequently Asked Questions (FAQ)</h1>
+        <p>
+          If you have any questions, you might find the answers here. Click on a
+          question to reveal the answer.
+        </p>
+      </header>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            What is the purpose of this system?
+          </button>
+          <div class="faq-answer">
+            <p>
+              The system allows agencies to track, validate, and investigate
+              reports, ensuring timely follow-up of incidents.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            How do I submit a new report?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Navigate to the "Submit Report" section, fill in the required
+              details, and click submit. You will receive a confirmation via
+              email.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            How do I track my submitted report?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Use the "Track Report" page. Enter the Report ID sent to your
+              email to view the status of your report.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            What should I do if I don't receive a Report ID?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Check your spam folder or contact the agency’s support team for
+              further assistance.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            How long does it take to resolve a report?
+          </button>
+          <div class="faq-answer">
+            <p>
+              The resolution time depends on the complexity of the report. You
+              will receive notifications on progress via email.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleAnswer(this)">
+            Who can access the report details?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Only authorized personnel from the agency handling the report can
+              access the full details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/faq.js"></script>
+  </body>
+</html>

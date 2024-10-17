@@ -21,7 +21,7 @@
         <div class="signup-form-container">
           <h2>Sign Up</h2>
 
-          <form id="signup-form" action="/onboarding/email-verification.html">
+          <form id="signup-form">
             <div class="form-group">
               <label for="name">Full Name</label>
               <input
@@ -65,8 +65,15 @@
                 placeholder="Confirm your password"
               />
             </div>
-
-            <button href="email-verification.html">Sign Up</button>
+            <div class="form-group">
+              <label for="userType">I am a:</label>
+              <select id="userType" required>
+                <option value="">Select User Type</option>
+                <option value="agency">Agency</option>
+                <option value="reporter">Reporter</option>
+              </select>
+            </div>
+            <button type="submit">Sign Up</button>
           </form>
 
           <div class="alternative-signup">
@@ -137,6 +144,68 @@
       </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script type="module">
+      import { auth, db } from "./js/firebaseConfig.js";
+      import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+      import {
+        doc,
+        setDoc,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Basic form validation (optional)
+          const userType = document.getElementById("userType").value;
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirm-password").value;
+
+          if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+          }
+          // Store user data (in a real application, you would save this in a database)
+          // users.push({ name, userType, email, password });
+          // alert("Signup successful! You can now login.");
+          // window.location.href = "./login.html";
+          // document.getElementById("signupForm").reset();
+
+          // if (userType && name && email && password === confirmPassword) {
+          // }
+          try {
+            // Firebase Authentication Signup
+            const userCredential = await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+            console.log("user", user);
+
+            // Store additional user data in Firestore
+            // await db.collection("users").doc(user.uid).set({
+            //   name: name,
+            //   email: email,
+            //   userType: userType,
+            //   createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            // });
+            await setDoc(doc(db, "users", user.uid), {
+              name: name,
+              email: email,
+              userType: userType,
+            });
+
+            alert("Signup successful!");
+            window.location.href = "./login.html";
+          } catch (error) {
+            alert("Error: " + error.message);
+          }
+        });
+    </script>
   </body>
 </html>

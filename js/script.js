@@ -1,43 +1,6 @@
-document
-  .getElementById("signup-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Basic form validation (optional)
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    if (name && email && password === confirmPassword) {
-      window.location.href = "email-verification.html";
-    }
-  });
+//
 
 //  Login from
-document
-  .getElementById("login-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get the form field values
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    // Simple validation (checks if the fields are filled)
-    if (email === email && password === password) {
-      // Simulate login success
-      alert("Login successful!");
-      window.location.href = "dashboard.html"; // Redirect to dashboard after login
-    } else {
-      alert("Please fill in all fields.");
-    }
-  });
 
 // forget passworld
 document

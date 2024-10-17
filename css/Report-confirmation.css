@@ -28,17 +28,19 @@ body {
 }
 
 .card p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 15px;
   text-align: center;
 }
-
+.id-header {
+  margin: 5rem 0 0rem 0;
+}
 .report-id {
   font-size: 1.5rem;
   font-weight: bold;
   color: #e67e22;
   text-align: center;
-  margin: 10px 0;
+  margin: 0rem 0 5rem 0;
 }
 
 .report-details {

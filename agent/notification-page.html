@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Report Notifications</title>
+    <link rel="stylesheet" href="./css/notification-page.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>New Report Notifications</h1>
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search by Report ID or Type"
+        />
+      </header>
+
+      <div class="filters">
+        <label for="status-filter">Filter by Status:</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="new">New</option>
+          <option value="in-progress">In Progress</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+
+      <div class="report-list">
+        <div class="report-card">
+          <h2>Report ID: #12345</h2>
+          <p>Type: Physical Abuse</p>
+          <p>Reported on: Oct 15, 2024</p>
+          <p>Status: <span class="badge new">New</span></p>
+          <button class="action-btn" onclick="viewReport(12345)">
+            View Details
+          </button>
+        </div>
+
+        <div class="report-card">
+          <h2>Report ID: #12346</h2>
+          <p>Type: Neglect</p>
+          <p>Reported on: Oct 14, 2024</p>
+          <p>Status: <span class="badge in-progress">In Progress</span></p>
+          <button class="action-btn" onclick="viewReport(12346)">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

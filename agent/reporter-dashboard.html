@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hellow</h1>
+    <button id="logout">Log out</button>
+    <script type="module">
+      import { auth } from "../js/firebaseConfig.js";
+      import { signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+      const logout = document.getElementById("logout");
+      logout.addEventListener("click", async function (e) {
+        e.preventDefault();
+        try {
+          const signout = await signOut(auth);
+          alert("Logged out successfully!");
+          window.location.href = "/";
+        } catch (error) {
+          alert(error.message);
+        }
+      });
+    </script>
+  </body>
+</html>

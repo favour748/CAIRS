@@ -21,7 +21,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 14px;
-  background: url(/image/team-386673_1280.jpg) rgb(120, 115, 115) 50% / cover
+  background: url(image/team-386673_1280.jpg) rgb(120, 115, 115) 50% / cover
     no-repeat;
 }
 .left-container h1 {

@@ -38,11 +38,68 @@
 
           <button type="submit">Log In</button>
         </form>
-        <p>
-          Don't have an account? <a href="/onboarding/sign-up.html">Sign Up</a>
-        </p>
+        <p>Don't have an account? <a href="./sign-up.html">Sign Up</a></p>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module">
+      // Login function
+      import { auth, db } from "./js/firebaseConfig.js";
+      import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+      import {
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+      const users = [];
+
+      document
+        .getElementById("login-form")
+        ?.addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Find user by email and password
+          // const user = users.find(
+          //   (u) => u.email === email && u.password === password
+          // );
+
+          // if (user) {
+          //   if (user.userType === "agency") {
+          //     // Redirect to agency dashboard
+          //     window.location.href = "./agent/agency-dashboard.html";
+          //   } else {
+          //     // Redirect to reporter dashboard
+          //     window.location.href = "./agent/reporter-dashboard.html";
+          //   }
+          // } else {
+          //   alert("Invalid email or password.");
+          // }
+          try {
+            const userCredential = await signInWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+
+            //Retrive user role from firestore database
+            const userDoc = await getDoc(doc(db, "users", user.uid));
+            if (userDoc.exists()) {
+              const userData = userDoc.data();
+              const role = userData.userType;
+              alert(`Logged in as ${role}`);
+
+              if (role === "agency") {
+                window.location.href = "agent/agency-dashboard.html";
+              } else if (role === "reporter") {
+                window.location.href = "agent/reporter-dashboard.html";
+              }
+            }
+          } catch (error) {
+            alert("User not found");
+          }
+        });
+    </script>
   </body>
 </html>

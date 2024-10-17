@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agency Dashboard</title>
+    <link rel="stylesheet" href="./css/agent.css" />
+    <script defer src="./js/agent.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">Agency Dashboard</div>
+      <ul class="menu">
+        <li class="active">Dashboard</li>
+        <li>Notifications</li>
+        <li>Validate Report</li>
+        <li>Investigations</li>
+        <li>Follow-Up</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <header class="header">
+        <h1>Agency Overview</h1>
+        <div class="profile">
+          <img src="https://via.placeholder.com/50" alt="Admin Profile" />
+          <span>Welcome, Admin</span>
+        </div>
+      </header>
+
+      <div class="dashboard-cards">
+        <div class="card">
+          <h2>New Report Notifications</h2>
+          <p>You have <strong>8</strong> new incident reports.</p>
+          <button onclick="viewReports()">View Reports</button>
+        </div>
+
+        <div class="card">
+          <h2>Validate Reports</h2>
+          <p>Reports pending validation: <strong>4</strong></p>
+          <button onclick="validateReports()">Validate Now</button>
+        </div>
+
+        <div class="card">
+          <h2>Initiate Investigation</h2>
+          <p>Investigations in progress: <strong>3</strong></p>
+          <button onclick="initiateInvestigation()">Start Investigation</button>
+        </div>
+
+        <div class="card">
+          <h2>Follow-Up Incidents</h2>
+          <p>Pending follow-ups: <strong>5</strong></p>
+          <button onclick="followUp()">Manage Follow-Ups</button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Agency Dashboard © 2024</p>
+      </footer>
+    </div>
+  </body>
+</html>
