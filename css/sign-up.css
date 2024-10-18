@@ -21,12 +21,11 @@ body {
   width: 100%;
   height: auto;
   border-radius: 14px;
-  background: url(image/team-386673_1280.jpg) rgb(120, 115, 115) 50% / cover
-    no-repeat;
+  background: url(/image/together.jpeg) rgb(120, 115, 115) 50% / cover no-repeat;
 }
 .left-container h1 {
   color: white;
-  margin: 40% 25%;
+  margin: 35% 30%;
   font-size: 4rem;
 }
 .right-container {
@@ -34,6 +33,16 @@ body {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: auto;
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 5px;
 }
 .signup-form-container {
   background-color: white;
@@ -70,7 +79,7 @@ input[type="password"] {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #e67e22;
   color: white;
   border: none;
   border-radius: 5px;
@@ -78,7 +87,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #cf711f;
 }
 
 .alternative-signup {
@@ -130,7 +139,7 @@ button:hover {
 }
 
 h1 {
-  color: #28a745;
+  color: #cf711f;
   margin-bottom: 15px;
 }
 
@@ -141,7 +150,7 @@ p {
 
 a.btn {
   text-decoration: none;
-  background-color: #28a745;
+  background-color: #e67e22;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -150,7 +159,7 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: #218838;
+  background-color: #cf711f;
 }
 
 /* Login */
@@ -213,7 +222,7 @@ input {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #e67e22;
   color: white;
   border: none;
   border-radius: 5px;
@@ -222,7 +231,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #cf711f;
 }
 
 p {
@@ -298,7 +307,7 @@ input {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #e67e22;
   border: none;
   color: white;
   font-size: 16px;
@@ -307,7 +316,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #cf711f;
 }
 
 a {
