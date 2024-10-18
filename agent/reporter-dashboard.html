@@ -3,11 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/agent/css/reporter-dashboard.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>hellow</h1>
-    <button id="logout">Log out</button>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Reporter Dashboard</h2>
+        <ul>
+          <li><a href="#" class="active">Dashboard Overview</a></li>
+          <li><a href="#">Submit New Report</a></li>
+          <li><a href="#">My Reports</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Support Resources</a></li>
+        </ul>
+        <button id="logout" class="logout-btn">Logout</button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="header">
+          <h1>Welcome!!</h1>
+          <p>Your reporting matters. Here is a summary of your activity.</p>
+        </header>
+
+        <section class="stats">
+          <div class="stat-card">
+            <h3>Total Reports</h3>
+            <p id="total-reports">12</p>
+          </div>
+          <div class="stat-card">
+            <h3>Pending Cases</h3>
+            <p id="pending-cases">5</p>
+          </div>
+          <div class="stat-card">
+            <h3>Resolved Cases</h3>
+            <p id="resolved-cases">7</p>
+          </div>
+        </section>
+
+        <section class="notifications">
+          <h2>Notifications</h2>
+          <ul id="notification-list">
+            <li>Report #12345 is now under review.</li>
+            <li>
+              Case handler requested additional information for report #67890.
+            </li>
+          </ul>
+        </section>
+
+        <section class="reports">
+          <h2>My Reports</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Report ID</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="report-list">
+              <tr>
+                <td>#12345</td>
+                <td>Oct 5, 2024</td>
+                <td>Under Review</td>
+                <td>
+                  <button class="btn-view">View</button>
+                  <button class="btn-withdraw">Withdraw</button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody id="report-list">
+              <tr>
+                <td>#12345</td>
+                <td>Oct 5, 2024</td>
+                <td>Under Review</td>
+                <td>
+                  <button class="btn-view">View</button>
+                  <button class="btn-withdraw">Withdraw</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
     <script type="module">
       import { auth } from "../js/firebaseConfig.js";
       import { signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
@@ -22,6 +105,34 @@
           alert(error.message);
         }
       });
+
+      // JavaScript to handle dynamic data and interaction
+
+      // Example: Simulate fetching report counts
+      document.addEventListener("DOMContentLoaded", () => {
+        const totalReports = document.getElementById("total-reports");
+        const pendingCases = document.getElementById("pending-cases");
+        const resolvedCases = document.getElementById("resolved-cases");
+
+        // Simulated data
+        const data = {
+          total: 12,
+          pending: 5,
+          resolved: 7,
+        };
+
+        // Update statistics
+        totalReports.textContent = data.total;
+        pendingCases.textContent = data.pending;
+        resolvedCases.textContent = data.resolved;
+      });
+
+      // Example: Add notification dynamically
+      const notificationList = document.getElementById("notification-list");
+      notificationList.insertAdjacentHTML(
+        "beforeend",
+        "<li>New report submitted successfully!</li>"
+      );
     </script>
   </body>
 </html>

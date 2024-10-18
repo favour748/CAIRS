@@ -20,7 +20,7 @@
           <li>Settings</li>
         </ul>
       </div>
-      <a href="/index.html">logout</a>
+      <a id="logout">logout</a>
     </div>
 
     <div class="main-content">
@@ -92,6 +92,49 @@
           window.location.href = "/login.html";
         }
       });
+    </script>
+    <script type="module">
+      import { auth } from "../js/firebaseConfig.js";
+      import { signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+      const logout = document.getElementById("logout");
+      logout.addEventListener("click", async function (e) {
+        e.preventDefault();
+        try {
+          const signout = await signOut(auth);
+          alert("Logged out successfully!");
+          window.location.href = "/";
+        } catch (error) {
+          alert(error.message);
+        }
+      });
+
+      // JavaScript to handle dynamic data and interaction
+
+      // Example: Simulate fetching report counts
+      document.addEventListener("DOMContentLoaded", () => {
+        const totalReports = document.getElementById("total-reports");
+        const pendingCases = document.getElementById("pending-cases");
+        const resolvedCases = document.getElementById("resolved-cases");
+
+        // Simulated data
+        const data = {
+          total: 12,
+          pending: 5,
+          resolved: 7,
+        };
+
+        // Update statistics
+        totalReports.textContent = data.total;
+        pendingCases.textContent = data.pending;
+        resolvedCases.textContent = data.resolved;
+      });
+
+      // Example: Add notification dynamically
+      const notificationList = document.getElementById("notification-list");
+      notificationList.insertAdjacentHTML(
+        "beforeend",
+        "<li>New report submitted successfully!</li>"
+      );
     </script>
   </body>
 </html>
